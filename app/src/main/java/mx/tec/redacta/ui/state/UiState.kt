@@ -1,13 +1,13 @@
 package mx.tec.redacta.ui.state
 
 import mx.tec.redacta.domain.EstadoModelo
-import mx.tec.redacta.domain.Tarea
+import mx.tec.redacta.domain.`Tarea.kt`
 
 /** Todo lo que la pantalla necesita para dibujarse. */
 data class RedactaUiState(
     val modelo: EstadoModelo = EstadoModelo.Cargando,
     val texto: String = "",
-    val tarea: Tarea = Tarea.Amable,
+    val tarea: `Tarea.kt` = `Tarea.kt`.Amable,
     /** La última respuesta. null = todavía no le has pedido nada. */
     val respuesta: Respuesta? = null
 ) {
@@ -20,7 +20,7 @@ data class RedactaUiState(
 /** Una respuesta del modelo, mientras llega y cuando ya llegó. */
 data class Respuesta(
     /** La tarea que se pidió: la de los chips puede cambiar mientras tanto. */
-    val tarea: Tarea,
+    val tarea: `Tarea.kt`,
     val texto: String = "",
     val generando: Boolean = true,
     val tokens: Int = 0,
