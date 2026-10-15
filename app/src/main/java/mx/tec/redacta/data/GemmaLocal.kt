@@ -60,7 +60,7 @@ class GemmaLocal @Inject constructor(
                 cacheDir = contexto.cacheDir.absolutePath
             )
         )
-        runCatching { withContext(Dispatchers.Default) { nuevo.initialize() } }
+        runCatching { nuevo.initialize() }
             .onSuccess {
                 motor = nuevo
                 _estado.value = EstadoModelo.Listo
